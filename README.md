@@ -57,7 +57,7 @@ mvn spring-boot:run
 
 And, after a long while, you will see:
 
-> añadir pantallazo
+![Screenshot](https://raw.githubusercontent.com/miguelatvaadin/spreadsheet-flow-poc/master/doc/screenshot1.png)
 
 
 
