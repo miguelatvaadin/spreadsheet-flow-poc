@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='GwtAddonExporter'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User' />
+
+  <!-- Inherit the default GWT style sheet.  You can change       -->
+  <!-- the theme of your GWT application by uncommenting          -->
+  <!-- any one of the following lines.                            -->
+  <inherits name='com.google.gwt.user.theme.standard.Standard' />
+  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+  <!-- Other module inherits                                      -->
+
+  <inherits name="miguel.v8addon.WidgetSet" />
+
+
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='miguel.gwtaddonexporter.client.FakeEntryPoint' />
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client' />
+  <source path='shared' />
+
+  <replace-with class="miguel.gwtaddonexporter.client.RpcProxy">
+    <when-type-is class="com.vaadin.client.communication.RpcProxy"/>
+  </replace-with>
+
+  <generate-with class="miguel.gwtaddonexporter.client.ServiceInterfaceProxyGenerator">
+    <when-type-assignable class="com.google.gwt.user.client.rpc.RemoteService" />
+  </generate-with>
+
+
+  <generate-with
+          class="miguel.gwtaddonexporter.ConnectorBundleLoaderFactory">
+    <when-type-assignable
+            class="com.vaadin.client.metadata.ConnectorBundleLoader" />
+  </generate-with>
+
+
+  <!--
+  <add-linker name="sso" />
+  <set-property name="user.agent" value="safari" />
+  -->
+
+  <!-- Use custom single script linker without document.write, doens't work with SDM and GWT unit tests -->
+  <define-linker name="humlinker" class="miguel.gwtaddonexporter.ClientEngineLinker" />
+  <add-linker name="humlinker" />
+
+</module>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Getting Started</title>
+</head>
+<body>
+
+<div id="mislot"></div>
+
+
+<script type="module">
+
+    import { css_gwt, css_v8addon, miapi } from './main.js';
+
+    console.log(css_gwt);
+    console.log(css_v8addon);
+
+    function doit() {
+
+        console.log('Hola')
+
+        //the package name serves as a JS namespace
+
+        var api = new miapi(document.getElementById("mislot")); //new miguel.gwtaddonexporter.client.MiApi(document.getElementById("mislot"));
+
+        api.registerClicked(e => console.log('js callback called for ' + e));
+
+        api.alert('Hello from js');
+    }
+
+
+    doit();
+</script>
+
+<button onclick="doit();">Add widget</button>
+
+</body>
+</html>

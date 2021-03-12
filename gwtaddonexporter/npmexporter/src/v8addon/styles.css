@@ -1,0 +1,52 @@
+.v8addon {
+	color: red;
+	font-size: 2em;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.boton {
+	cursor: pointer;
+	background-color: orange;
+	color: white;
+	border-radius: 20px;
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid whitesmoke;
+}
+
+.boton:hover {
+	background-color: lightcoral;
+	color: blue;
+	border: 1px solid whitesmoke;
+}
+
+.label0 {
+	background-color: lightgreen;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid whitesmoke;
+	color: grey;
+}
+
+.label1 {
+	background-color: lightsalmon;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 5px;
+	border: 1px solid whitesmoke;
+	color: whitesmoke;
+}
+
+.label {
+	padding-left: 40px;
+	margin: 5px;
+	padding-top: 11px;
+}
+
+body {
+	background-color: lightblue;
+}
