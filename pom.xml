@@ -16,7 +16,6 @@
     <modules>
         <module>v8addon</module>
         <module>gwtaddonexporter</module>
-        <module>gwt-simple</module>
         <module>component</module>
     </modules>
 </project>
